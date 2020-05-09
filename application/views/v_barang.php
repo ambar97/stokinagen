@@ -19,7 +19,7 @@
               </nav>
             </div>
             <div class="col-lg-6 col-5 text-right">
-              <a href="#" class="btn btn-sm btn-neutral">New</a>
+              <a href="<?= base_url('Barang/tambah_barang')?>" class="btn btn-sm btn-neutral">Tambah</a>
               <!-- <a href="#" class="btn btn-sm btn-neutral">Filters</a> -->
             </div>
           </div>
@@ -44,9 +44,9 @@
                 <thead class="thead-light">
                   <tr>
                     <th>No</th>
-                    <th>Nm Outlet</th>
                     <th>Nama Barang</th>
-                    <th>Stok</th>
+                    <th>harga</th>
+                    <th>Kategori</th>
                     <th>Action</th>
                   </tr>
                 </thead>

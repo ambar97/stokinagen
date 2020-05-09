@@ -11,4 +11,7 @@ class Barang extends CI_Controller {
 		$data['detBarang']=$this->Model_barang->select_barang('barang')->result();
         $this->load->view('v_barang',$data);
     }
+		public function tambah_barang(){
+			$this->load->view('barang/tambah_barang');
+		}
 }
