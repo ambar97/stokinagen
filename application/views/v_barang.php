@@ -47,6 +47,7 @@
                     <th>Nama Barang</th>
                     <th>harga</th>
                     <th>Kategori</th>
+                    <th>Jenis</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -55,9 +56,32 @@
                   <tr>
                     <td><?php echo $no++ ?></td>
                     <td><?php echo $barang->nama_barang ?></td>
-                    <td>Rp. <?= number_format($barang->harga_produksi) ?></td>
+                    <td>
+                      <?php if ($barang->harga_ecer != 0){
+                          $harga = $barang->harga_ecer;
+                      }else {
+                        $harga = $barang->harga_produksi;
+                      } ?>
+                      Rp. <?= number_format($harga) ?></td>
                     <td><?= $barang->nama_category?></td>
-                    <td><a href="" class="btn-sm btn-success"><i class="fa fa-check"></i></a></td>
+                    <td>
+                      <?php if ($barang->order_barang == 0){
+                        $jenis = "Tidak Ada";
+                      }elseif ($barang->order_barang == 1) {
+                        $jenis = "Barang Baru";
+                      }elseif ($barang->order_barang == 2) {
+                        $jenis = "Discount ". $barang->diskon."%";
+                      }else {
+                        $jenis = "Baru dan Discount ". $barang->diskon."%";
+                      }
+                       ?>
+                       <?= $jenis ?>
+                    </td>
+                    <td>
+                      <a href="" class="btn-sm btn-success" title="lihat detail"><i class="fa fa-eye"></i></a>
+                      <a href="<?= base_url('Barang/ubah_data/').$barang->id_barang."/".$barang->nama_barang ?>" class="btn-sm btn-primary" title="Ubah Data"> <i class="fa fa-brush"></i> </a>
+                      <a href="<?= base_url('Barang/hapus_barang/'.$barang->id_barang)?>" onclick="javascript: return confirm('Anda Yakin Akan Menghapus ?')" class="btn-sm btn-danger" title="Hapus"> <i class="fa fa-trash"></i> </a>
+                    </td>
                   </tr>
                   <?php endforeach ?>
                 </tbody>

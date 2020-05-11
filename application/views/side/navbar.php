@@ -12,7 +12,7 @@
       <!-- Brand -->
       <div class="sidenav-header d-flex align-items-center">
         <a class="navbar-brand" href="dashboard.html">
-          <img src="<?php echo base_url()?>master/assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
+          <img src="<?php echo base_url()?>gambar/stok.png" class="navbar-brand-img" alt="...">
         </a>
         <div class="ml-auto">
           <!-- Sidenav toggler -->
@@ -41,19 +41,30 @@
             <li class="nav-item">
               <a class="nav-link <?php if ($this->uri->segment(1)=='Barang'): ?>
                 <?php echo 'active' ?>
-              <?php endif ?>" href="<?php echo base_url('Barang') ?>">
-                <i class="ni ni-run text-orange"></i>
+              <?php endif ?>" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-examples">
+                <i class="ni ni-ungroup text-orange"></i>
                 <span class="nav-link-text">Barang</span>
               </a>
+              <div class="collapse" id="navbar-examples">
+                <ul class="nav nav-sm flex-column">
+                  <li class="nav-item">
+                    <a href="<?php echo base_url('Barang') ?>" class="nav-link">Data Barang</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= base_url('Barang/kategori') ?>" class="nav-link">Kategori</a>
+                  </li>
+                </ul>
+              </div>
             </li>
-            <li class="nav-item">
+
+            <!-- <li class="nav-item">
               <a class="nav-link <?php if ($this->uri->segment(1)=='Pembayaran'): ?>
                 <?php echo 'active' ?>
               <?php endif ?>" href="<?php echo base_url('Pembayaran')?>">
                 <i class="ni ni-cart text-info"></i>
                 <span class="nav-link-text">Pembayaran</span>
               </a>
-            </li>
+            </li> -->
             <!-- <li class="nav-item" >
               <a class="nav-link <?php if ($this->uri->segment(1)=='Barang'): ?>
                 <?php echo 'active' ?>
@@ -70,29 +81,11 @@
           <!-- Navigation -->
           <ul class="navbar-nav mb-md-3">
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('Referal') ?>">
+              <a class="nav-link" href="">
                 <i class="ni ni-spaceship"></i>
-                <span class="nav-link-text">Referal</span>
+                <span class="nav-link-text">Info Paket</span>
               </a>
             </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="../../docs/foundation/colors.html" target="_blank">
-                <i class="ni ni-palette"></i>
-                <span class="nav-link-text">Foundation</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../../docs/components/alerts.html" target="_blank">
-                <i class="ni ni-ui-04"></i>
-                <span class="nav-link-text">Components</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../../docs/plugins/charts.html" target="_blank">
-                <i class="ni ni-chart-pie-35"></i>
-                <span class="nav-link-text">Plugins</span>
-              </a>
-            </li> -->
           </ul>
         </div>
       </div>
