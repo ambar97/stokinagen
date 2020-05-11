@@ -15,5 +15,5 @@ application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
 /vendor/
-gambar/barang
+gambar/barang/*
 test
